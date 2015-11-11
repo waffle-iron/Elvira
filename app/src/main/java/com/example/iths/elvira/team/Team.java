@@ -52,7 +52,6 @@ public abstract class Team implements ITeam {
      * Passes parameters on to addPlayer(number, firstName lastName)
      * @param number, int with player number
      */
-    public void addPlayer (int number) {
-        addPlayer(number, "", "");
+    public void addPlayer (int number) {addPlayer(number, "", "");
     }
 }

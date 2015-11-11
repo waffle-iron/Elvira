@@ -1,16 +1,18 @@
 package com.example.iths.elvira;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     TextView homeTeamName, awayTeamName, homeTeamScore, awayTeamScore, homeTeamFoul, awayTeamFoul;
 
     private String htName, atName;
-    //get default value of 0
     private int htScore, atScore, htFoul, atFoul;
 
     @Override
@@ -36,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void homeTeamFoul(View view) {
+        htName = homeTeamName.getText().toString();
+        int f = 1;
+        showConfirmDialog(htName, f);
     }
 
     public void homeTeamYellowCard(View view) {
@@ -48,11 +53,40 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void awayTeamFoul(View view) {
+        atName = awayTeamName.getText().toString();
+        int f = 2;
+        showConfirmDialog(atName, f);
     }
 
     public void awayTeamYellowCard(View view) {
     }
 
     public void awayTeamRedCard(View view) {
+    }
+    private void showConfirmDialog(String team, final int f){
+        //shows confirmationsdialog
+        new AlertDialog.Builder(this)
+                .setTitle("Foul " + team + "?")
+                .setMessage("Add freekick to "+ team+ ":"+"\n\n")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        //add foul to chosen team
+                        if(f==1){
+                            htFoul++;
+                            homeTeamFoul.setText(String.valueOf(htFoul));
+                        }
+                        if(f==2){
+                            atFoul++;
+                            awayTeamFoul.setText(String.valueOf(atFoul));
+                        }
+                    }
+                })
+                .setNegativeButton("Avbryt", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // do nothing
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
     }
 }

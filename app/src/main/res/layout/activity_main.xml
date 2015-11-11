@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home_team"
+            android:id="@+id/home_team_name"
+            android:textSize="@dimen/team_vs_team"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:layout_weight="1"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/vs"
+            android:textSize="@dimen/team_vs_team"
+            android:layout_margin="@dimen/activity_vertical_margin"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/away_team"
+            android:id="@+id/away_team_name"
+            android:textSize="@dimen/team_vs_team"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:layout_weight="1"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/score"
+        android:gravity="center"
+        android:textSize="@dimen/team_vs_team"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home_team_score"
+            android:id="@+id/home_team_score_textview"
+            android:textSize="@dimen/score_size"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:layout_weight="1"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/score_divider"
+            android:textSize="@dimen/score_size"
+            android:layout_margin="@dimen/activity_vertical_margin"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home_team_score"
+            android:id="@+id/away_team_score_textview"
+            android:textSize="@dimen/score_size"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:layout_weight="1"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/free_kicks"
+        android:gravity="center"
+        android:textSize="@dimen/team_vs_team"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/home_team_free_kicks_textview"
+            android:text="@string/home_team_score"
+            android:textSize="@dimen/team_vs_team"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/team_vs_team"
+            android:text="@string/score_divider"
+            android:textSize="@dimen/team_vs_team"
+            android:layout_margin="@dimen/activity_horizontal_margin"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/away_team_free_kicks_textview"
+            android:text="@string/home_team_score"
+            android:textSize="@dimen/team_vs_team"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/goal"
+                android:id="@+id/home_team_goal"
+                android:onClick="homeTeamGoal"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/free_kick"
+                android:id="@+id/home_team_free_kick"
+                android:onClick="homeTeamFoul"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/yellow_card"
+                android:id="@+id/home_team_yellow_card"
+                android:onClick="homeTeamYellowCard"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/red_card"
+                android:id="@+id/home_team_red_card"
+                android:onClick="homeTeamRedCard"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/goal"
+                android:id="@+id/away_team_goal"
+                android:onClick="awayTeamGoal"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/free_kick"
+                android:id="@+id/awa_team_free_kick"
+                android:onClick="awayTeamFoul"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/yellow_card"
+                android:id="@+id/away_team_yellow_card"
+                android:onClick="awayTeamYellowCard"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/red_card"
+                android:id="@+id/away_team_red_card"
+                android:onClick="awayTeamRedCard"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

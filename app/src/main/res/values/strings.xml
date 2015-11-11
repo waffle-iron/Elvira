@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Elvira</string>
+    <string name="home_team">Home Team</string>
+    <string name="vs">vs</string>
+    <string name="away_team">Away Team</string>
+    <string name="home_team_score">0</string>
+    <string name="score_divider">-</string>
+    <string name="score">Score</string>
+    <string name="free_kicks">Free Kicks</string>
+    <string name="goal">Goal</string>
+    <string name="free_kick">Foul</string>
+    <string name="yellow_card">Yellow Card</string>
+    <string name="red_card">Red Card</string>
+</resources>

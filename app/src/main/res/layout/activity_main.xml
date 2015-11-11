@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/home_team"
-            android:id="@+id/home_team_name"
+            android:id="@+id/tv_home_team_name"
             android:textSize="@dimen/team_vs_team"
             android:layout_margin="@dimen/activity_vertical_margin"
             android:layout_weight="1"
@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/away_team"
-            android:id="@+id/away_team_name"
+            android:id="@+id/tv_away_team_name"
             android:textSize="@dimen/team_vs_team"
             android:layout_margin="@dimen/activity_vertical_margin"
             android:layout_weight="1"
@@ -56,8 +56,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/home_team_score"
-            android:id="@+id/home_team_score_textview"
+            android:id="@+id/tv_home_team_score"
             android:textSize="@dimen/score_size"
             android:layout_margin="@dimen/activity_vertical_margin"
             android:layout_weight="1"
@@ -73,8 +72,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/home_team_score"
-            android:id="@+id/away_team_score_textview"
+            android:id="@+id/tv_away_team_score"
             android:textSize="@dimen/score_size"
             android:layout_margin="@dimen/activity_vertical_margin"
             android:layout_weight="1"
@@ -96,8 +94,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/home_team_free_kicks_textview"
-            android:text="@string/home_team_score"
+            android:id="@+id/tv_home_team_free_kicks"
             android:textSize="@dimen/team_vs_team"
             android:layout_weight="1"
             android:layout_margin="@dimen/activity_horizontal_margin"
@@ -113,8 +110,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/away_team_free_kicks_textview"
-            android:text="@string/home_team_score"
+            android:id="@+id/tv_away_team_free_kicks"
             android:textSize="@dimen/team_vs_team"
             android:layout_weight="1"
             android:layout_margin="@dimen/activity_horizontal_margin"
@@ -139,27 +135,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/goal"
-                android:id="@+id/home_team_goal"
+                android:id="@+id/btn_home_team_goal"
                 android:onClick="homeTeamGoal"/>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/free_kick"
-                android:id="@+id/home_team_free_kick"
+                android:id="@+id/btn_home_team_free_kick"
                 android:onClick="homeTeamFoul"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/yellow_card"
-                android:id="@+id/home_team_yellow_card"
+                android:id="@+id/btn_home_team_yellow_card"
                 android:onClick="homeTeamYellowCard"/>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/red_card"
-                android:id="@+id/home_team_red_card"
+                android:id="@+id/btn_home_team_red_card"
                 android:onClick="homeTeamRedCard"/>
 
         </LinearLayout>
@@ -175,27 +171,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/goal"
-                android:id="@+id/away_team_goal"
+                android:id="@+id/btn_away_team_goal"
                 android:onClick="awayTeamGoal"/>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/free_kick"
-                android:id="@+id/awa_team_free_kick"
+                android:id="@+id/btn_away_team_free_kick"
                 android:onClick="awayTeamFoul"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/yellow_card"
-                android:id="@+id/away_team_yellow_card"
+                android:id="@+id/btn_away_team_yellow_card"
                 android:onClick="awayTeamYellowCard"/>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/red_card"
-                android:id="@+id/away_team_red_card"
+                android:id="@+id/btn_away_team_red_card"
                 android:onClick="awayTeamRedCard"/>
 
         </LinearLayout>

@@ -1,4 +1,4 @@
-package com.example.iths.elvira.Events;
+package com.example.iths.elvira.event;
 
 import com.example.iths.elvira.player.Player;
 

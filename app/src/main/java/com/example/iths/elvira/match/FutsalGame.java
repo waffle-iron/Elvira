@@ -8,6 +8,10 @@ import com.example.iths.elvira.team.FutsalTeam;
 public class FutsalGame {
     private int lengthOPeriod, lengthOfExtraPeriod, amountOfPeriods, amountOfExtraPeriods;
 
-    FutsalTeam homeTeam = new FutsalTeam();
-    FutsalTeam awayTeam = new FutsalTeam();
+    public void newMatch() {
+
+        FutsalTeam homeTeam = new FutsalTeam();
+        FutsalTeam awayTeam = new FutsalTeam();
+
+    }
 }

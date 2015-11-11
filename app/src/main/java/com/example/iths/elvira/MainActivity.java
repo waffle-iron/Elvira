@@ -13,9 +13,6 @@ public class MainActivity extends AppCompatActivity {
     //get default value of 0
     private int htScore, atScore, htFoul, atFoul;
 
-    //lägger till dessa för att se om det ändras
-    private String skräp;
-    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

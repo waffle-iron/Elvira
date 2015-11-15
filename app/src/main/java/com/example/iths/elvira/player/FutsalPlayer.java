@@ -11,8 +11,4 @@ public class FutsalPlayer extends Player{
         super(number, firstName, lastName, team);
     }
 
-    @Override
-    public void setTeam() {
-
-    }
 }

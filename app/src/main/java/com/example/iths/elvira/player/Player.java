@@ -5,7 +5,7 @@ import com.example.iths.elvira.team.Team;
 /**
  * Created by Bartek Svaberg on 15-11-10.
  */
-public abstract class Player implements IPlayer {
+public abstract class Player extends Person {
 
     // Keeps track of player number
     private int number;
@@ -26,7 +26,7 @@ public abstract class Player implements IPlayer {
      * Setter method for player number
      * @param number int with player number
      */
-    @Override
+
     public void setNumber(int number) {
         this.number = number;
     }
@@ -35,45 +35,9 @@ public abstract class Player implements IPlayer {
      * Getter method for player number
      * @return player number
      */
-    @Override
+
     public int getNumber() {
         return this.number;
-    }
-
-    /**
-     * Setter method for player first name
-     * @param firstName, String containing first name
-     */
-    @Override
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    /**
-     * Getter method for player first name
-     * @return String containing player first name
-     */
-    @Override
-    public String getFirstName() {
-        return this.firstName;
-    }
-
-    /**
-     * Setter method for player last name
-     * @param lastName String conatining player last name
-     */
-    @Override
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    /**
-     * Getter method for player last name
-     * @return a String conatining player last name
-     */
-    @Override
-    public String getLastName() {
-        return this.lastName;
     }
 
     /**

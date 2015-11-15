@@ -7,8 +7,8 @@ import com.example.iths.elvira.team.Team;
  */
 public class FutsalPlayer extends Player{
 
-    public FutsalPlayer(int number, String firstName, String lastName, Team team) {
-        super(number, firstName, lastName, team);
+    public FutsalPlayer(String firstName, String lastName, int number, Team team, int id) {
+        super(firstName, lastName, id, team, number);
     }
 
 }

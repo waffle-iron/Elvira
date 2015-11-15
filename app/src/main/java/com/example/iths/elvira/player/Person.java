@@ -8,6 +8,12 @@ public abstract class Person {
     private String lastName;
     private int id;
 
+    public Person(String firstName, String lastName, int id) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.id = id;
+    }
+
     public String getFirstName() {
         return firstName;
     }

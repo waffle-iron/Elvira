@@ -5,15 +5,15 @@ import com.example.iths.elvira.player.Player;
 /**
  * Created by Robin on 2015-11-11.
  */
-public class Events {
+public class Event {
     private long time;
     private Player player;
 
-    public Events(long time, Player player){
+    public Event(long time, Player player){
         this.time = time;
         this.player = player;
     }
-    public Events(long time){
+    public Event(long time){
         this.time = time;
     }
 }

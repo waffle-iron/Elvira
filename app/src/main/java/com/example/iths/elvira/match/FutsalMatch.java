@@ -5,7 +5,7 @@ import com.example.iths.elvira.team.FutsalTeam;
 /**
  * Created by Bartek Svaberg on 15-11-11.
  */
-public class FutsalGame {
+public class FutsalMatch {
     private int lengthOPeriod, lengthOfExtraPeriod, amountOfPeriods, amountOfExtraPeriods;
 
     public void newMatch() {

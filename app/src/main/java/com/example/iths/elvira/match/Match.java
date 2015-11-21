@@ -4,8 +4,9 @@ package com.example.iths.elvira.match;
  * Created by Bartek Svaberg on 15-11-18.
  */
 public abstract class Match {
-    private int periodLength, periodLengthExtraTime, amountOfPeriods, amountOfExtraPeriods;
-    private String nameOfPeriod, nameOfExtraPeriod, suspensionLength;
+    private int periodLength, periodLengthExtraTime, amountOfPeriods, amountOfExtraPeriods, suspensionLength;
+    private String nameOfPeriod, nameOfExtraPeriod;
+    private boolean elviraIsTimeKeeper;
 
     public int getPeriodLength() {
         return periodLength;
@@ -55,11 +56,11 @@ public abstract class Match {
         this.nameOfExtraPeriod = nameOfExtraPeriod;
     }
 
-    public String getSuspensionLength() {
+    public int getSuspensionLength() {
         return suspensionLength;
     }
 
-    public void setSuspensionLength(String suspensionLength) {
+    public void setSuspensionLength(int suspensionLength) {
         this.suspensionLength = suspensionLength;
     }
 
@@ -71,5 +72,8 @@ public abstract class Match {
         this.elviraIsTimeKeeper = elviraIsTimeKeeper;
     }
 
-    private boolean elviraIsTimeKeeper;
+    public abstract void init();
+
 }
+
+

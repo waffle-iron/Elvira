@@ -41,9 +41,9 @@ public abstract class Team implements ITeam {
      * @param lastName - player last name
      * this - adds team to player
      */
-    public void addPlayer(int number, String firstName, String lastName){
-        new FutsalPlayer(number, firstName, lastName, this);
-        playerList.put(number, new FutsalPlayer (number, firstName,lastName, this));
+    public void addPlayer(int number, String firstName, String lastName, int id){
+        Player player = new FutsalPlayer(firstName, lastName, 0, this, number);
+        playerList.put(number, player);
     }
 
     /**
@@ -52,6 +52,6 @@ public abstract class Team implements ITeam {
      * Passes parameters on to addPlayer(number, firstName lastName)
      * @param number, int with player number
      */
-    public void addPlayer (int number) {addPlayer(number, "", "");
+    public void addPlayer (int number) {addPlayer(number, "", "", 0);
     }
 }

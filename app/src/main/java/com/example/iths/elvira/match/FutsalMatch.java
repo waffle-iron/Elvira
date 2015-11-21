@@ -5,13 +5,12 @@ import com.example.iths.elvira.team.FutsalTeam;
 /**
  * Created by Bartek Svaberg on 15-11-11.
  */
-public class FutsalMatch {
-    private int lengthOPeriod, lengthOfExtraPeriod, amountOfPeriods, amountOfExtraPeriods;
+public class FutsalMatch extends Match{
 
-    public void newMatch() {
 
+    @Override
+    public void init() {
         FutsalTeam homeTeam = new FutsalTeam();
         FutsalTeam awayTeam = new FutsalTeam();
-
     }
 }

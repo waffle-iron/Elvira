@@ -10,6 +10,8 @@ public class FutsalMatch extends Match{
 
     @Override
     public void init() {
+        setNameOfPeriod("half");
+        setNameOfExtraPeriod("half");
         FutsalTeam homeTeam = new FutsalTeam();
         FutsalTeam awayTeam = new FutsalTeam();
     }

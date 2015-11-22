@@ -10,8 +10,8 @@ public class FutsalMatch {
 
     public void newMatch() {
 
-        FutsalTeam homeTeam = new FutsalTeam();
-        FutsalTeam awayTeam = new FutsalTeam();
+       // FutsalTeam homeTeam = new FutsalTeam();
+       // FutsalTeam awayTeam = new FutsalTeam();
 
     }
 }

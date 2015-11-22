@@ -143,7 +143,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/free_kick"
                 android:id="@+id/btn_home_team_free_kick"
-                android:onClick="homeTeamFoul"/>
+                android:onClick="addHomeTeamFoul"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -179,7 +179,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/free_kick"
                 android:id="@+id/btn_away_team_free_kick"
-                android:onClick="awayTeamFoul"/>
+                android:onClick="addAwayTeamFoul"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -195,8 +195,5 @@
                 android:onClick="awayTeamRedCard"/>
 
         </LinearLayout>
-
     </LinearLayout>
-
-
 </LinearLayout>

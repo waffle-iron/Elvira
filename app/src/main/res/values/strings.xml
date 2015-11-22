@@ -11,4 +11,11 @@
     <string name="free_kick">Foul</string>
     <string name="yellow_card">Yellow Card</string>
     <string name="red_card">Red Card</string>
+    <string name="pick_minute">Pick minute</string>
+    <string name="pick_player">Pick player</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="addFreekick">Add freekick to</string>
+    <string name="confirmEvent">Confirm event</string>
+
 </resources>

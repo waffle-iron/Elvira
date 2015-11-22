@@ -16,4 +16,6 @@ public class Event {
     public Event(long time){
         this.time = time;
     }
+    //default constructor
+    public Event(){}
 }

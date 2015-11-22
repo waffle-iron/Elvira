@@ -8,22 +8,27 @@ import com.example.iths.elvira.team.Team;
 public abstract class Player extends Person {
 
     // Keeps track of player number
-    private int number;
+    private String number;
     // Player team
     private Team team;
 
     // Constructor instantiating a new player
-    public Player(String firstName, String lastName, int id, Team team, int number) {
+    public Player(String firstName, String lastName, String id, Team team, String number) {
         super(firstName, lastName, id);
         this.number = number;
         this.team = team;
     }
+    //Konstruktor som Robin skapat för att kunna köra med match.xml. Alla värden är String! (2015-11-19)
+    public Player(String firstName, String lastName, String number, String id) {
+        super(firstName, lastName, id);
+        this.number = number;
+    }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 

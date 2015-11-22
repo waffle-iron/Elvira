@@ -24,7 +24,7 @@ public class Helper {
      * @param timeStamp - the time at which the event has occurred
      * @return millis - a long containing the accumulated time stamp for an event.
      */
-    public static long countdownCalculator(int period, int periodLength, long timeStamp){
+    public static long countDownCalculator(int period, int periodLength, long timeStamp){
         long periodInMillis = periodLength * 60000;
         return (periodInMillis*(period-1))+(periodLength-timeStamp);
     }

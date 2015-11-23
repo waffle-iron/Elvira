@@ -6,6 +6,7 @@ import com.example.iths.elvira.event.RedCard;
 import com.example.iths.elvira.player.Player;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 
 /**
  * Created by Bartek Svaberg on 15-11-18.
@@ -14,6 +15,7 @@ public abstract class Match {
     private int periodLength, periodLengthExtraTime, amountOfPeriods, amountOfExtraPeriods, suspensionLength;
     private String nameOfPeriod = "period", nameOfExtraPeriod = "extra period";
     private boolean elviraHasOfficialTime, clockGoesup, clockIsResetEachPeriod;
+    private ArrayList<Event> eventList = new ArrayList<>();
 
     public int getPeriod() {
         return period;
@@ -105,25 +107,26 @@ public abstract class Match {
         this.elviraHasOfficialTime = elviraHasOfficialTime;
     }
 
-    public void addEvent(int minutes, int seconds, Player player, String eventName) {
+    public long calculateEventTime(int minutes, int seconds) {
         long calculatedTimeStamp = Helper.inputToMillis(minutes, seconds);
-        Object o = null;
 
         if (elviraHasOfficialTime) {
             calculatedTimeStamp = Helper.inputToMillis(minutes, seconds);
-        }
-        else if (!clockGoesup) {
+        } else if (!clockGoesup) {
             long timeStamp = Helper.inputToMillis(minutes, seconds);
             calculatedTimeStamp = Helper.countDownCalculator(period, periodLength, timeStamp);
-        }
-        else if (clockGoesup) {
+        } else if (clockGoesup) {
             long timestamp = Helper.inputToMillis(minutes, seconds);
             calculatedTimeStamp = Helper.countUpCalculator(period, periodLength, timestamp);
         }
+        return calculatedTimeStamp;
+    }
 
-        // Todo: Figure a way out to connect this with adding a new event. Maybe this method should be moved?
+    public void addEvent (String eventName, long timeStamp, Player player) {
+            Object o = null;
         try {
-            o = Class.forName(eventName).getConstructor(long.class, Player.class).newInstance(calculatedTimeStamp, player);
+            o = Class.forName(eventName).getConstructor(long.class, Player.class).newInstance(timeStamp, player);
+            eventList.add((Event)o);
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
@@ -135,7 +138,6 @@ public abstract class Match {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        // Todo add [(Event) o] to list of events.
     }
 
     public abstract void init();

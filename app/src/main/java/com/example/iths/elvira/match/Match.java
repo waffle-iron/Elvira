@@ -2,7 +2,10 @@ package com.example.iths.elvira.match;
 
 import com.example.iths.elvira.Helper;
 import com.example.iths.elvira.event.Event;
+import com.example.iths.elvira.event.RedCard;
 import com.example.iths.elvira.player.Player;
+
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * Created by Bartek Svaberg on 15-11-18.
@@ -102,8 +105,9 @@ public abstract class Match {
         this.elviraHasOfficialTime = elviraHasOfficialTime;
     }
 
-    public void addEvent(int minutes, int seconds, Player player, Event event) {
+    public Event addEvent(int minutes, int seconds, Player player, String eventName) {
         long calculatedTimeStamp = Helper.inputToMillis(minutes, seconds);
+        Object o = null;
 
         if (elviraHasOfficialTime) {
             calculatedTimeStamp = Helper.inputToMillis(minutes, seconds);
@@ -118,6 +122,20 @@ public abstract class Match {
         }
 
         // Todo: Figure a way out to connect this with adding a new event. Maybe this method should be moved?
+        try {
+            o = Class.forName(eventName).getConstructor(long.class, Player.class).newInstance(calculatedTimeStamp, player);
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return (Event) o;
     }
 
     public abstract void init();

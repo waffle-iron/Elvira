@@ -105,7 +105,7 @@ public abstract class Match {
         this.elviraHasOfficialTime = elviraHasOfficialTime;
     }
 
-    public Event addEvent(int minutes, int seconds, Player player, String eventName) {
+    public void addEvent(int minutes, int seconds, Player player, String eventName) {
         long calculatedTimeStamp = Helper.inputToMillis(minutes, seconds);
         Object o = null;
 
@@ -135,7 +135,7 @@ public abstract class Match {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return (Event) o;
+        // Todo add [(Event) o] to list of events.
     }
 
     public abstract void init();

@@ -13,9 +13,10 @@ import java.util.ArrayList;
 public abstract class Match {
     private int periodLength, periodLengthExtraTime, amountOfPeriods, amountOfExtraPeriods, suspensionLength;
     private String nameOfPeriod = "period", nameOfExtraPeriod = "extra period";
-    private boolean elviraHasOfficialTime, clockGoesup, clockIsResetEachPeriod, betweenPeriods;
+    private boolean elviraHasOfficialTime, clockGoesup, clockIsResetEachPeriod, betweenPeriods, draw;
     private ArrayList<Event> eventList = new ArrayList<>();
     private int period;
+    private boolean canEndInDraw;
 
     public boolean isClockGoesup() {
         return clockGoesup;
@@ -149,6 +150,7 @@ public abstract class Match {
         try {
             o = Class.forName(eventName).getConstructor(long.class, Player.class).newInstance(timeStamp, player);
             eventList.add((Event)o);
+
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
@@ -164,6 +166,24 @@ public abstract class Match {
 
     public abstract void init();
 
+    public void startPeriod(){
+        betweenPeriods=false;
+        period++;
+    }
+
+    public void endPeriod() {
+        if (period >= amountOfPeriods) {
+            endNormalTime();
+        } else {
+            betweenPeriods = true;
+        }
+    }
+
+    public void endNormalTime() {
+        if (!canEndInDraw && draw) {
+            // Todo start extra time somehow
+        }
+    }
 }
 
 

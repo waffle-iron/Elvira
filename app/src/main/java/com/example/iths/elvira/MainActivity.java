@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     //sökvägar som ska parseas skapas beroende på vilken laglist som hämtas (2015-11-20)
     private final String htList = "/match/deltaglistalag1/spelare";
     private final String atList = "/match/deltaglistalag2/spelare";
+
     //sökvägar som ska parseas skapas beroende på vilket lagnamn som ska hämtas (2015-11-20)
     private final String htTeamName = "/match/matchinfo/lag1namn/text()";
     private final String atTeamName = "/match/matchinfo/lag2namn/text()";

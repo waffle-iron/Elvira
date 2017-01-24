@@ -69,6 +69,7 @@ public class Parser {
             lastName = lastName.trim();
             FutsalPlayer player = new FutsalPlayer(firstName, lastName, 0, team, number);
             player.setSubstitute(substitute);
+            player.setCaptain(playerElement.getElementsByClass("captain").first().text() == "(K)" );
             team.addPlayer(player);
             System.out.println();
         }

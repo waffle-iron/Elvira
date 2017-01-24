@@ -1,5 +1,7 @@
 package com.example.iths.elvira.event;
 
+import android.util.Log;
+
 import com.example.iths.elvira.player.Player;
 
 /**
@@ -9,6 +11,5 @@ public class Goal extends Event {
 
     public Goal(long time, Player player){
         super(time, player);
-
     }
 }

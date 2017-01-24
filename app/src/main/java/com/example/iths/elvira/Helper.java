@@ -40,5 +40,4 @@ public class Helper {
         long periodInMillis = periodLength * 60000;
         return (periodInMillis*(period-1))+timeStamp;
     }
-
 }

@@ -1,33 +1,25 @@
-package com.example.iths.elvira;
+package com.example.iths.elvira.Parser;
+
+import org.jsoup.Jsoup;
+import org.jsoup.helper.Validate;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import com.example.iths.elvira.match.FutsalMatch;
 import com.example.iths.elvira.player.FutsalPlayer;
 import com.example.iths.elvira.team.FutsalTeam;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-import org.junit.Test;
-
 import java.io.IOException;
 
-import static org.junit.Assert.*;
+public class Parser {
 
-/**
- * To work on unit tests, switch the Test Artifact in the Build Variants view.
- */
-public class ExampleUnitTest {
-    @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+    public static FutsalMatch parse(String url) throws IOException {
+        return getDataFromFogis(url);
     }
 
-    @Test
-    public void getHtmlData() throws IOException {
+    private static FutsalMatch getDataFromFogis(String url) throws IOException {
         FutsalMatch match = new FutsalMatch();
-
-        String url = "http://svenskfotboll.se/superettan/match/?scr=result&fmid=3211882";
 
         Document doc = Jsoup.connect(url).get();
 
@@ -37,10 +29,10 @@ public class ExampleUnitTest {
         match.homeTeam = addTeamFromHtml(homeTeamElement);
         match.awayTeam = addTeamFromHtml(awayTeamElement);
 
-        System.out.println();;
+        return match;
     }
 
-    private FutsalTeam addTeamFromHtml(Element teamElement) {
+    private static FutsalTeam addTeamFromHtml(Element teamElement) {
         FutsalTeam team = new FutsalTeam();
         String name = getTeamNameFromHtml(teamElement);
         team.setName(name);
@@ -52,7 +44,7 @@ public class ExampleUnitTest {
         return team;
     }
 
-    private FutsalTeam addPlayersAndSubstitutesFromHtml(FutsalTeam team, Elements playerList, boolean substitute) {
+    private static FutsalTeam addPlayersAndSubstitutesFromHtml(FutsalTeam team, Elements playerList, boolean substitute) {
         for (Element playerElement : playerList) {
             String[] names;
             int number = Integer.parseInt(playerElement.getElementsByClass("number").first().text().split("[.]")[0]);
@@ -83,7 +75,7 @@ public class ExampleUnitTest {
         return team;
     }
 
-    private String getTeamNameFromHtml(Element teamElement) {
+    private static String getTeamNameFromHtml(Element teamElement) {
         return teamElement.getElementsByTag("h3").first().text();
     }
 }

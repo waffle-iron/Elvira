@@ -3,6 +3,7 @@ package com.example.iths.elvira.team;
 import com.example.iths.elvira.player.FutsalPlayer;
 import com.example.iths.elvira.player.Player;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -14,7 +15,7 @@ public abstract class Team implements ITeam {
     private String name;
 
     // Keeps track of player within team
-    public HashMap<Integer, Player> playerList = new HashMap<>();
+    public ArrayList<Player> playerList = new ArrayList<>();
 
     /**
      * Getter method for team name
@@ -34,16 +35,21 @@ public abstract class Team implements ITeam {
         this.name = name;
     }
 
-    /**
-     * Creates a new player by sending parameters to constructor as below
-     * @param number - player number
-     * @param firstName - player first name
-     * @param lastName - player last name
-     * this - adds team to player
-     */
+    public void addPlayer(Player player) {
+        playerList.add(player);
+    }
     public void addPlayer(String firstName, String lastName, int id, int number){
-        Player player = new FutsalPlayer(firstName, lastName, id, this, number);
-        playerList.put(number, player);
+        addPlayer(firstName, lastName, id, number, true);
+    }
+
+    public void addPlayer(String firstName, String lastName, int id, int number, boolean substitute) {
+        FutsalPlayer player = new FutsalPlayer(firstName, lastName, id, this, number);
+        player.setSubstitute(substitute);
+        addPlayer(player);
+    }
+
+    public Player getPlayer(Integer number) {
+        return playerList.get(number);
     }
 
     /**
